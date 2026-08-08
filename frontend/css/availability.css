@@ -1,0 +1,115 @@
+/* ===== AVAILABILITY PAGE ===== */
+
+.availability-container,
+.container {
+  max-width: 800px;
+  margin: auto;
+  background: white;
+  padding: 25px;
+  border-radius: 8px;
+}
+
+.current-availability-box {
+  background: #f8fafc;
+  border: 1px solid #dbe2ea;
+  border-radius: 10px;
+  padding: 16px;
+  margin-bottom: 20px;
+}
+
+.current-availability-box h3 {
+  margin-top: 0;
+}
+
+.current-day-status {
+  padding: 10px;
+  border-radius: 6px;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.status-available {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.status-unavailable {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.status-partial {
+  background: #ffedd5;
+  color: #9a3412;
+}
+
+.availability-message {
+  margin-bottom: 15px;
+  padding: 12px;
+  border-radius: 6px;
+  display: none;
+  font-weight: bold;
+}
+
+.message-info {
+  background: #e0f2fe;
+  color: #075985;
+}
+
+.message-success {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.availability-row {
+  display: grid;
+  grid-template-columns: 130px 130px 140px 1fr 1fr;
+  gap: 24px;
+  align-items: center;
+  margin-bottom: 12px;
+  padding: 18px;
+  background: #eef1f4;
+  border-radius: 8px;
+}
+
+.day-name {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.all-day-field {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: bold;
+}
+
+.time-field label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+.time-field input {
+  width: 100%;
+  max-width: 170px;
+  padding: 8px;
+}
+
+.availability-row select {
+  padding: 8px;
+  width: 130px;
+}
+
+@media (max-width: 800px) {
+  .availability-row {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .time-field input,
+  .availability-row select {
+    width: 100%;
+    max-width: none;
+  }
+}

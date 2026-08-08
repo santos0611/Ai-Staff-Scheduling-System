@@ -1,0 +1,604 @@
+/* ===========MANAGER SHARED STYLES============================= */
+
+.mode-banner {
+  width: 100%;
+  padding: 12px;
+  text-align: center;
+  font-weight: bold;
+  background-color: #d9a300;
+  color: #111;
+  margin-bottom: 15px;
+  border-radius: 6px;
+}
+
+.manager-schedule-container {
+  max-width: 430px;
+  margin: 0 auto;
+  background: white;
+  min-height: 100vh;
+}
+
+/* ===========MANAGER BOARD PAGE - manager-board.html====================== */
+
+.page-wrap {
+  max-width: 1200px;
+  margin: 0 auto;
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.top-row h2 {
+  margin: 0;
+}
+
+.week-controls {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.week-controls button {
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.manager-workspace {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 430px;
+  gap: 20px;
+  align-items: start;
+}
+
+.board-wrapper {
+  max-height: 620px;
+  overflow: auto;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: white;
+  margin-bottom: 30px;
+  padding-bottom: 10px;
+}
+
+.schedule-grid {
+  display: grid;
+  grid-template-columns: 180px repeat(7, 1fr);
+  min-width: 1000px;
+  border: 1px solid #ddd;
+}
+
+.grid-header {
+  background: #f1f3f5;
+  font-weight: bold;
+  padding: 12px;
+  border-right: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  text-align: center;
+}
+
+.sticky-left {
+  position: sticky;
+  left: 0;
+  z-index: 5;
+}
+
+.grid-header.sticky-left {
+  z-index: 10;
+}
+
+.staff-name-cell {
+  background: #fafafa;
+  padding: 12px;
+  border-right: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  font-weight: bold;
+}
+
+.shift-cell {
+  min-height: 170px;
+  padding: 8px;
+  border-right: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  background: white;
+  cursor: pointer;
+}
+
+.shift-cell:hover {
+  background: #f7fbff;
+}
+
+.shift-cell.selected-cell {
+  background: #e8f2ff;
+  outline: 2px solid #0078d4;
+}
+
+.shift-block {
+  min-height: 110px;
+  background: #0078d4;
+  color: white;
+  border-radius: 6px;
+  padding: 8px;
+  margin-bottom: 6px;
+  font-size: 13px;
+  overflow: visible;
+}
+
+.shift-block.open-shift {
+  background: #f59e0b;
+  color: #111;
+}
+
+.shift-block small {
+  display: block;
+  margin-top: 4px;
+  opacity: 0.95;
+}
+
+.available-label {
+  color: #008000;
+  font-size: 13px;
+}
+
+.unavailable-label {
+  color: #d00000;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.unknown-label,
+.add-shift-label {
+  color: #777;
+  font-size: 13px;
+}
+
+.holiday-block {
+  background: #fff1c2;
+  border: 1px solid #d9a300;
+  color: #6b4e00;
+  border-radius: 6px;
+  padding: 8px;
+  margin-bottom: 6px;
+  font-size: 13px;
+}
+
+/* ===============MANAGER CREATE SHIFT PANEL====================== */
+
+.side-create-panel {
+  position: sticky;
+  top: 20px;
+  background: #ffffff;
+  border: 1px solid #dbe2ea;
+  border-radius: 10px;
+  padding: 16px;
+  min-width: 390px;
+  max-width: 430px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.side-create-panel h3 {
+  margin-top: 0;
+}
+
+#selected-cell-info {
+  margin-bottom: 15px;
+  padding: 12px;
+  background: #eef1f4;
+  border-radius: 6px;
+}
+
+.assign-panel {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.assign-panel input,
+.assign-panel select,
+.assign-panel button {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+.assign-panel button {
+  min-height: 46px;
+}
+
+#ai-suggestions {
+  grid-column: 1 / -1;
+}
+
+.delete-shift-btn {
+  margin-top: 6px;
+  width: 100%;
+  border: none;
+  background: #dc2626;
+  color: white;
+  padding: 5px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.delete-shift-btn:hover {
+  background: #991b1b;
+}
+
+/* ===============ATTENDANCE====================== */
+
+.attendance-controls,
+.attendance-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-top: 6px;
+  width: 100%;
+}
+
+.attendance-controls button,
+.attendance-actions button {
+  width: 100%;
+  padding: 5px;
+  font-size: 11px;
+  border: 2px solid transparent;
+  border-radius: 4px;
+  cursor: pointer;
+  background: #f1f5f9;
+  font-weight: 700;
+}
+
+.shift-present {
+  background: #16a34a !important;
+  color: white;
+}
+
+.shift-sick {
+  background: #f97316 !important;
+  color: white;
+}
+
+.shift-absent {
+  background: #dc2626 !important;
+  color: white;
+}
+
+.attendance-actions button.active-present {
+  background: #ffffff;
+  color: #16a34a;
+  border-color: #16a34a;
+}
+
+.attendance-actions button.active-absent {
+  background: #ffffff;
+  color: #dc2626;
+  border-color: #dc2626;
+}
+
+.attendance-actions button.active-sick {
+  background: #ffffff;
+  color: #f97316;
+  border-color: #f97316;
+}
+
+/* =================AI / WEEKLY RISK SUMMARY======================== */
+
+.suggestion-card {
+  background: #f9fafb;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 12px;
+  margin-bottom: 12px;
+}
+
+.risk-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 12px;
+  margin-top: 12px;
+  margin-bottom: 18px;
+}
+
+.risk-tile {
+  background: #f8fafc;
+  border: 1px solid #dbe2ea;
+  border-radius: 10px;
+  padding: 14px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.risk-tile:hover,
+.active-risk-tile {
+  border-color: #0078d4;
+  background: #e8f2ff;
+}
+
+.risk-tile strong {
+  display: block;
+  font-size: 24px;
+  margin-bottom: 6px;
+}
+
+.risk-tile span {
+  font-size: 13px;
+  color: #555;
+}
+
+.risk-detail-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.risk-detail-card {
+  background: #fff8e1;
+  border: 1px solid #ecd9a0;
+  border-radius: 8px;
+  padding: 12px;
+}
+
+.risk-detail-card.law-risk {
+  background: #ffe8e8;
+  border-color: #ff4d4f;
+  color: #7a0000;
+}
+
+.risk-detail-card.coverage-risk {
+  background: #fff4d6;
+  border-color: #f59e0b;
+}
+
+.risk-detail-card.warning-risk {
+  background: #fff8e1;
+  border-color: #ecd9a0;
+}
+
+#weekly-risk-summary {
+  margin-bottom: 140px;
+}
+
+.section {
+  margin-top: 25px;
+}
+
+.section h3 {
+  margin-bottom: 10px;
+}
+
+/* ================= MANAGER CALENDAR PAGE - manager-calendar.html====================== */
+
+.manager-calendar-container {
+  width: min(1100px, calc(100vw - 40px));
+  margin: 0 auto;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+  overflow: hidden;
+}
+
+.calendar-header {
+  background: #d9a300;
+  color: #111;
+  text-align: center;
+  font-weight: 700;
+  font-size: 20px;
+  padding: 22px 20px;
+}
+
+.calendar-body {
+  padding: 24px;
+}
+
+.month-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 22px;
+}
+
+.month-title {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.month-nav {
+  display: flex;
+  gap: 10px;
+}
+
+.month-nav button {
+  width: 42px;
+  height: 42px;
+  border: 1px solid #ccc;
+  background: white;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.week-strip {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.day-pill {
+  flex: 1;
+  text-align: center;
+  padding: 12px 8px;
+  border-radius: 16px;
+  background: #f2f2f2;
+  cursor: pointer;
+}
+
+.day-pill.active {
+  background: #dfe8f7;
+  border: 2px solid #0078d4;
+  font-weight: bold;
+}
+
+.day-pill:hover {
+  background: #e9e9e9;
+}
+
+.selected-date-heading {
+  font-size: 18px;
+  font-weight: 700;
+  margin: 0 0 18px 0;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #e2e2e2;
+}
+
+.filter-row {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.filter-btn {
+  border: 1px solid #c7c7c7;
+  background: white;
+  border-radius: 999px;
+  padding: 10px 16px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.filter-btn.active {
+  background: #6b7280;
+  color: white;
+  border-color: #6b7280;
+}
+
+#manager-shift-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.shift-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 14px;
+  padding: 18px;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  background: #fafafa;
+}
+
+.shift-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.avatar-circle {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: 3px solid #8bc34a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  background: white;
+}
+
+.shift-info p {
+  margin: 3px 0;
+}
+
+.staff-name {
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.shift-role {
+  color: #666;
+}
+
+.empty-message {
+  padding: 24px 8px;
+  color: #666;
+  font-size: 16px;
+}
+
+/* ========== MANAGER RESPONSIVE======================= */
+
+@media (max-width: 1000px) {
+  .manager-workspace {
+    grid-template-columns: 1fr;
+  }
+
+  .side-create-panel {
+    position: static;
+    min-width: 0;
+    max-width: none;
+  }
+}
+
+@media (max-width: 900px) {
+  .assign-panel {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .manager-calendar-container {
+    width: 100%;
+  }
+
+  .calendar-body {
+    padding: 16px;
+  }
+
+  .week-strip {
+    gap: 8px;
+  }
+
+  .day-pill {
+    padding: 12px 4px;
+    font-size: 14px;
+  }
+
+  .shift-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+.rules-panel {
+  background: #fff8e1;
+  border-left: 5px solid #ff9800;
+  padding: 12px;
+  margin-bottom: 15px;
+  border-radius: 6px;
+}
+
+.rules-panel h4 {
+  margin: 0 0 8px 0;
+  font-size: 14px;
+  color: #e65100;
+}
+
+.rules-panel ul {
+  padding-left: 18px;
+  margin: 0;
+}
+
+.rules-panel li {
+  font-size: 13px;
+  margin-bottom: 4px;
+}

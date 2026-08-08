@@ -1,0 +1,22 @@
+/* ===== Calendar Styles ===== */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f6f8;
+      padding: 30px;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      background: white;
+      padding: 25px;
+      border-radius: 6px;
+    }
+
+    #calendar {
+      margin-top: 20px;
+    }
+
+    #shift-details {
+      margin-top: 20px;
+    }

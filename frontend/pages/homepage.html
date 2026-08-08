@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Homepage | HeartWork</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/homepage.css">
+</head>
+
+<body>
+  <div id="mode-banner"></div>
+
+  <header class="home-brand-header">
+    <img src="../images/heartwork-logo.png" alt="Heartwork">
+  </header>
+
+  <div class="page-card">
+    <div class="welcome-row">
+      <div>
+        <h2 id="welcome-text">Welcome Back</h2>
+        <p class="user-role" id="user-role-text"></p>
+      </div>
+
+      <span id="admin-badge-area"></span>
+    </div>
+
+    <h3>Upcoming Shifts</h3>
+
+    <div id="shift-list" class="placeholder">
+      <p>Loading shifts...</p>
+    </div>
+
+    <div class="action-grid">
+      <a class="action-card" href="availability.html">
+        <strong>My Availability</strong>
+        <span>Update your working days and hours.</span>
+      </a>
+
+      <a class="action-card" href="timeoff.html">
+        <strong>Request Time Off</strong>
+        <span>Submit holiday, sickness or leave requests.</span>
+      </a>
+    </div>
+  </div>
+
+  <div id="bottom-nav"></div>
+
+  <script src="../js/app.js"></script>
+  <script src="../js/homepage.js"></script>
+
+  <script>
+    const staffId = localStorage.getItem("staff_id");
+    const viewMode = localStorage.getItem("view_mode");
+    const userName = localStorage.getItem("name") || "User";
+    const userPosition = localStorage.getItem("position") || "staff";
+    const isAdmin = localStorage.getItem("is_admin");
+
+    if (!staffId) {
+      window.location.href = "index.html";
+    } else if (viewMode === "manager") {
+      window.location.href = "manager-board.html";
+    } else {
+      document.getElementById("welcome-text").textContent =
+        `Welcome Back ${userName}, ${userPosition}`;
+
+      if (isAdmin === "1") {
+        document.getElementById("admin-badge-area").innerHTML =
+          '<span class="admin-badge">ADMIN</span>';
+      }
+
+      loadShifts(staffId);
+      renderBottomNav("homepage.html");
+      renderModeBanner();
+    }
+  </script>
+</body>
+</html>

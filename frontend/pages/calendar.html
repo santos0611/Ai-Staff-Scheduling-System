@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Calendar | HeartWork</title>
+
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/calendar.css">
+
+  <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.20/index.global.min.js"></script>
+</head>
+
+<body>
+  <div id="mode-banner"></div>
+
+  <div class="container">
+    <h2>My Shift Calendar</h2>
+    <div id="calendar"></div>
+
+    <div id="shift-details" class="placeholder">
+      <p>Click a shift to view details.</p>
+    </div>
+  </div>
+
+  <div id="bottom-nav"></div>
+
+  <script src="../js/app.js"></script>
+  <script src="../js/staff-calendar.js"></script>
+
+  <script>
+    const staffId = localStorage.getItem("staff_id");
+    const position = localStorage.getItem("position") || "";
+    const viewMode = localStorage.getItem("view_mode");
+
+    if (!staffId) {
+      window.location.href = "index.html";
+    } else if (position.toLowerCase() === "manager" && viewMode === "manager") {
+      window.location.href = "manager-calendar.html";
+    } else {
+      loadCalendar(staffId);
+      renderBottomNav("calendar.html");
+      renderModeBanner();
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Manager Scheduling Board | Staff Rota System</title>
+
+  <!-- FIXED PATHS -->
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/manager.css">
+</head>
+
+<body>
+
+  <div id="mode-banner"></div>
+
+  <div class="page-wrap">
+    <div class="top-row">
+      <h2>Manager Scheduling Board</h2>
+
+      <div class="week-controls">
+        <button onclick="changeBoardWeek(-1)">Previous Week</button>
+        <strong id="week-range-label">Loading...</strong>
+        <button onclick="changeBoardWeek(1)">Next Week</button>
+      </div>
+    </div>
+
+    <div class="manager-workspace">
+
+      <div class="board-wrapper">
+        <div id="schedule-grid" class="schedule-grid"></div>
+      </div>
+
+      <div class="side-create-panel">
+
+        <div class="rules-panel">
+          <h4>Shift Creation Rules</h4>
+          <ul>
+            <li>Shifts must be between valid working hours (e.g. 06:00–22:00)</li>
+            <li>Staff must be available for the selected day and time</li>
+            <li>No overlapping shifts are allowed</li>
+            <li>Maximum 8 hours per day per staff member</li>
+            <li>Maximum 48 hours per week per staff member</li>
+            <li>Minimum 11 hours rest between shifts</li>
+            <li>Trainees must be scheduled with a Crew Trainer</li>
+            <li>Manager cover must exist for the full day before publishing</li>
+            <li>Open shifts cannot be within 24 hours of start time</li>
+          </ul>
+        </div>
+
+        <h3>Create Shift</h3>
+
+        <div id="selected-cell-info">
+          <p>No cell selected yet. Click a board cell.</p>
+        </div>
+
+        <div class="assign-panel">
+
+          <div>
+            <label>Start Time</label>
+            <input type="time" id="create-start-time">
+          </div>
+
+          <div>
+            <label>End Time</label>
+            <input type="time" id="create-end-time">
+          </div>
+
+          <div>
+            <label>Role</label>
+            <select id="create-role">
+              <option value="crew member">Crew Member</option>
+              <option value="manager">Manager</option>
+              <option value="crew trainer">Crew Trainer</option>
+              <option value="trainee">Trainee</option>
+            </select>
+          </div>
+
+          <div>
+            <label>Open Shift?</label>
+            <select id="create-open-shift">
+              <option value="0">No</option>
+              <option value="1">Yes</option>
+            </select>
+          </div>
+
+          <button onclick="createShiftFromCell()">Create Shift</button>
+          <button onclick="suggestStaffForSelectedShift()">Suggest Staff</button>
+
+          <div style="grid-column: 1 / -1;">
+            <button onclick="publishWeek()" style="width:100%; background:#0078d4; color:white;">
+              Publish Week
+            </button>
+          </div>
+
+          <div class="info-box">
+            <strong>What does Risk mean?</strong>
+            <p>
+              Risk indicates how suitable a staff member is for a shift.
+              It is calculated based on working hours, rest periods,
+              role coverage, and fairness.
+            </p>
+            <p>
+              <strong>Low Risk:</strong> Safe to assign<br>
+              <strong>Medium Risk:</strong> Acceptable with caution<br>
+              <strong>High Risk:</strong> May cause fatigue, legal, or coverage issues
+            </p>
+          </div>
+
+          <div id="ai-suggestions" style="margin-top: 20px;"></div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h3>Publishing</h3>
+      <p>
+        To create an open shift, click a board cell, enter the shift time, set
+        <strong>Open Shift?</strong> to <strong>Yes</strong>, then click
+        <strong>Create Shift</strong>. When ready, click <strong>Post Week</strong>.
+      </p>
+
+      <div id="weekly-risk-summary"></div>
+
+      <button onclick="publishCurrentWeek()">Post Week</button>
+    </div>
+
+  </div>
+
+  <div id="bottom-nav"></div>
+
+  <!-- FIXED JS PATHS -->
+  <script src="../js/app.js"></script>
+  <script src="../js/manager-calendar.js"></script>
+  <script src="../js/manager-board.js"></script>
+
+  <!-- CLEANED LOGIC (single init) -->
+  <script>
+    const staffId = localStorage.getItem("staff_id");
+    const position = (localStorage.getItem("position") || "").toLowerCase();
+    const isAdmin = localStorage.getItem("is_admin");
+
+    if (!staffId) {
+      window.location.href = "index.html";
+    } else if (position !== "manager" && isAdmin !== "1") {
+      window.location.href = "homepage.html";
+    } else {
+      localStorage.setItem("view_mode", "manager");
+
+      initManagerBoard();
+      renderBottomNav("manager-board.html");
+      renderModeBanner();
+    }
+  </script>
+
+</body>
+</html>

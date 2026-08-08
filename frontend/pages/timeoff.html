@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Request Time Off | Staff Rota System</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/timeoff.css">
+
+</head>
+<body>
+
+  <div class="timeoff-container">
+    <h2>Request Time Off</h2>
+
+    <div class="form-grid">
+      <div>
+        <label for="request-type">Request Type</label>
+        <select id="request-type">
+          <option value="Holiday">Holiday</option>
+          <option value="Sickness">Sickness</option>
+          <option value="Unpaid Leave">Unpaid Leave</option>
+          <option value="Emergency Leave">Emergency Leave</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="start-date">Start Date</label>
+        <input type="date" id="start-date">
+      </div>
+
+      <div>
+        <label for="end-date">End Date</label>
+        <input type="date" id="end-date">
+      </div>
+
+      <div>
+        <label for="reason">Reason</label>
+        <textarea id="reason" rows="4"></textarea>
+      </div>
+
+      <div>
+        <button onclick="submitTimeOffRequest()">Submit Request</button>
+      </div>
+    </div>
+
+    <h3 class="requests-heading">My Requests</h3>
+    <div id="my-time-off-list">
+      <p>Loading requests...</p>
+    </div>
+  </div>
+
+  <div id="bottom-nav"></div>
+
+  <script src="../js/app.js"></script>
+  <script src="../js/timeoff.js"></script>
+
+  <script>
+  const staffId = localStorage.getItem("staff_id");
+
+  if (!staffId) {
+      window.location.href = "index.html";
+  } else {
+      renderBottomNav("timeoff.html");
+      renderModeBanner();
+      loadMyTimeOffRequests(staffId);
+  }
+  </script>
+</body>
+</html>

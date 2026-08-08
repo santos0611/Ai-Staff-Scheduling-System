@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Notifications | Staff Rota System</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/notificationpage.css">
+</head>
+<body>
+
+  <div id="mode-banner"></div>
+
+  <div class="notification-container">
+    <h2>Notifications</h2>
+    <div id="notifications-content">
+      <p>Loading notifications...</p>
+    </div>
+  </div>
+
+  <div id="bottom-nav"></div>
+
+  <script src="../js/app.js"></script>
+  <script src="../js/notifications.js"></script>
+
+  <script>
+  const staffId = localStorage.getItem("staff_id");
+
+  if (!staffId) {
+      window.location.href = "index.html";
+  } else {
+      renderBottomNav("notificationpage.html");
+      renderModeBanner();
+
+      const mode = localStorage.getItem("view_mode");
+
+      if (mode === "manager") {
+          loadManagerNotifications();
+      } else {
+          loadStaffNotifications();
+      }
+  }
+  </script>
+
+</body>
+</html>

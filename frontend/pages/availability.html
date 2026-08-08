@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Availability | Staff Rota System</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/availability.css">
+</head>
+
+<body>
+
+<div class="container">
+
+  <h2>My Availability</h2>
+
+  <div class="current-availability-box">
+    <h3>Current Availability</h3>
+
+    <div id="current-availability-summary">
+      <p>Loading current availability...</p>
+    </div>
+  </div>
+
+  <div id="availability-message" class="availability-message"></div>
+
+  <div id="availability-form"></div>
+
+  <button class="save-btn" onclick="saveAvailability()">
+    Save Availability
+  </button>
+
+</div>
+
+  <div id="bottom-nav"></div>
+
+  <script src="../js/app.js"></script>
+  <script src="../js/availability.js"></script>
+
+  <script>
+  const staffId = localStorage.getItem("staff_id");
+
+  if (!staffId) {
+      window.location.href = "index.html";
+  } else {
+      renderBottomNav("availability.html");
+      renderModeBanner();
+      loadAvailability(staffId);
+  }
+  </script>
+
+</body>
+</html>

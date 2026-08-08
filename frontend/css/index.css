@@ -1,0 +1,94 @@
+/* ===========LOGIN PAGE - index.html============================= */
+
+.login-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.login-box {
+  background: white;
+  padding: 34px;
+  width: 360px;
+  border-radius: 12px;
+  box-shadow: 0 8px 22px rgba(0,0,0,0.08);
+}
+
+.logo-wrap {
+  text-align: center;
+  margin-bottom: 18px;
+}
+
+.logo-wrap img {
+  width: 230px;
+  max-width: 100%;
+  height: auto;
+}
+
+.login-box h2 {
+  text-align: center;
+  margin: 0;
+  font-size: 28px;
+}
+
+.subtitle {
+  text-align: center;
+  color: #666;
+  margin-top: 8px;
+  margin-bottom: 24px;
+  font-size: 14px;
+}
+
+.login-box label {
+  display: block;
+  margin-top: 14px;
+  font-weight: bold;
+}
+
+.login-box input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 6px;
+  box-sizing: border-box;
+  border: 1px solid #ccd3dc;
+  border-radius: 6px;
+}
+
+.links {
+  text-align: center;
+  margin-top: 18px;
+}
+
+.links a,
+.forgot-link {
+  color: #0078d4;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.links a:hover,
+.forgot-link:hover {
+  text-decoration: underline;
+}
+
+.forgot-wrap {
+  margin-top: 10px;
+  text-align: right;
+}
+
+.login-box button {
+  width: 100%;
+  margin-top: 22px;
+  padding: 12px;
+  background-color: #0078d4;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 6px;
+}
+
+.login-box button:hover {
+  background-color: #005ea6;
+}

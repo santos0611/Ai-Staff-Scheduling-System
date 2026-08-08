@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Settings | HeartWork</title>
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+
+<body>
+  <div id="mode-banner"></div>
+
+  <div class="page-card">
+    <div class="welcome-row">
+      <div>
+        <h2>Settings</h2>
+        <p class="user-role" id="welcome-user"></p>
+      </div>
+
+      <span id="settings-admin-badge"></span>
+    </div>
+
+    <div id="manager-switch-area"></div>
+
+    <div class="settings-section">
+      <button class="settings-btn logout-btn" onclick="logout()">Log Out</button>
+    </div>
+  </div>
+
+  <div id="bottom-nav"></div>
+
+  <script src="../js/app.js"></script>
+  <script src="../js/settings.js"></script>
+
+  <script>
+    const staffId = localStorage.getItem("staff_id");
+
+    if (!staffId) {
+      window.location.href = "index.html";
+    } else {
+      renderBottomNav("settings.html");
+      renderModeBanner();
+      renderSettingsOptions();
+    }
+  </script>
+</body>
+</html>

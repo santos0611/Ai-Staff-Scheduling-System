@@ -1,0 +1,42 @@
+/* ===== TIME OFF PAGE ===== */
+
+.timeoff-container {
+  max-width: 700px;
+  margin: auto;
+  background: white;
+  padding: 25px;
+  border-radius: 8px;
+}
+
+.form-grid {
+  display: grid;
+  gap: 14px;
+  margin-top: 20px;
+}
+
+.form-grid label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.form-grid input,
+.form-grid select,
+.form-grid textarea,
+.form-grid button {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+.request-card {
+  background: #eef1f4;
+  padding: 15px;
+  border-radius: 6px;
+  margin-top: 12px;
+}
+
+.requests-heading {
+  margin-top: 30px;
+}

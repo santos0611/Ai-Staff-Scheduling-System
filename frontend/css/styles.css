@@ -1,0 +1,83 @@
+/* ===== GLOBAL ===== */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f6f8;
+  margin: 0;
+  padding: 20px;
+  padding-bottom: 180px;
+  overflow-y: auto;
+}
+
+/* ===== BOTTOM NAV ===== */
+.bottom-nav,
+#bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  width: 100%;
+  background-color: #ffffff;
+  border-top: 1px solid #ddd;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 9999;
+}
+
+.nav-item {
+  text-decoration: none;
+  color: #333;
+  font-size: 14px;
+  text-align: center;
+}
+
+.nav-item:hover,
+.active-nav {
+  color: #0078d4;
+}
+
+.active-nav {
+  font-weight: bold;
+}
+
+/* ===== SHARED CONTAINERS ===== */
+.container {
+  margin-bottom: 100px;
+}
+
+.page-wrap {
+  padding-bottom: 180px;
+}
+
+/* ===== MODE BANNER ===== */
+.mode-banner {
+  width: 100%;
+  padding: 12px;
+  text-align: center;
+  font-weight: bold;
+  background-color: #d9a300;
+  color: #111;
+  margin-bottom: 15px;
+}
+
+/* ===== STATUS BADGES ===== */
+.status-badge {
+  padding: 6px 12px;
+  border-radius: 12px;
+  font-size: 13px;
+  font-weight: 600;
+  background: #e0e0e0;
+  color: #333;
+  border: 2px solid #9acb5a;
+}
+
+.status-absent {
+  background: #ff4d4f;
+  color: white;
+}
+
+.status-sick {
+  background: #fa8c16;
+  color: white;
+}

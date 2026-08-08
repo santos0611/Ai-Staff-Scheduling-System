@@ -1,0 +1,39 @@
+/* ===== NOTIFICATIONS PAGE ===== */
+
+.notification-container {
+  max-width: 700px;
+  margin: auto;
+  background: white;
+  padding: 25px;
+  border-radius: 8px;
+}
+
+.shift-card {
+  background: #eef1f4;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 6px;
+}
+
+.shift-card button {
+  margin-top: 10px;
+  margin-right: 10px;
+  padding: 10px 16px;
+  cursor: pointer;
+}
+.notification-action-row {
+  display: flex;
+  gap: 10px;
+  margin-top: 12px;
+  flex-wrap: wrap;
+}
+
+.manager-note-box {
+  width: 100%;
+  margin-top: 8px;
+  padding: 10px;
+  box-sizing: border-box;
+  border: 1px solid #ccd3dc;
+  border-radius: 6px;
+}
+

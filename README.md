@@ -293,6 +293,6 @@ Potential future development includes:
 
 ## Author
 
-**Sergio Santos**
+**Sergio Camara**
 
 Computer Science / Computational Systems graduate portfolio project.

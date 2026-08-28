@@ -52,7 +52,8 @@ This allows the manager to make the final scheduling decision while receiving st
 ## Screenshots
 
 ### AI Staff Recommendations
-![AI staff recommendations]<img width="1852" height="886" alt="Screenshot 2026-05-07 015755" src="https://github.com/user-attachments/assets/83e12b31-9488-4f5e-ab5f-46e918724935" />
+![AI staff recommendations]<img width="1852" height="886" alt="Screenshot 2026-05-07 015755" src="https://github.com/user-attachments/assets/83e12b31-9488-4f5e-ab5f-46e918724935" /><img width="453" height="705" alt="Screenshot 2026-04-29 162653" src="https://github.com/user-attachments/assets/c8b9fd4c-4279-4b81-90e5-6fa580f9dbb5" />
+
 
 
 ### Weekly Rota

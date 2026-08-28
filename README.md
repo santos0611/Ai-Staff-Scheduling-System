@@ -52,22 +52,21 @@ This allows the manager to make the final scheduling decision while receiving st
 ## Screenshots
 
 ### AI Staff Recommendations
-![AI staff recommendations](<img width="1577" height="829" alt="Screenshot 2026-05-07 015927" src="https://github.com/user-attachments/assets/d0921769-971c-46d4-b62c-f3fd0ce5708c" />
-)
+![AI staff recommendations]<img width="1852" height="886" alt="Screenshot 2026-05-07 015755" src="https://github.com/user-attachments/assets/83e12b31-9488-4f5e-ab5f-46e918724935" />
+
 
 ### Weekly Rota
-![Weekly rota](<img width="1852" height="886" alt="Screenshot 2026-05-07 015755" src="https://github.com/user-attachments/assets/2ae6dfcd-9398-41a1-8032-72bb4b552280" />
-)
+![Weekly rota]<img width="1577" height="829" alt="Screenshot 2026-05-07 015927" src="https://github.com/user-attachments/assets/f7af5e99-7d39-4f8c-9d7d-db6261dfcf8f" />
+
 
 ### Calendar
-![Calendar](<img width="1344" height="879" alt="Screenshot 2026-05-07 022322" src="https://github.com/user-attachments/assets/8d3d6cf4-3ed2-4d8b-a328-b3f2197c9d80" />
-)| (<img width="1698" height="915" alt="Screenshot 2026-05-07 011112" src="https://github.com/user-attachments/assets/fdfae547-74a1-43b4-b445-465f2db3ad7a" />)
+![Calendar].<img width="1698" height="915" alt="Screenshot 2026-05-07 011112" src="https://github.com/user-attachments/assets/e6c345cf-0f7f-4ae8-abe3-d815b325b421" />
+
 
 
 ### Staff Availability
-![Staff availability](<img width="882" height="900" alt="Screenshot 2026-05-07 010553" src="https://github.com/user-attachments/assets/7e0e028a-c604-4a11-9bb3-314579e40707" />
-<img width="824" height="825" alt="Screenshot 2026-04-26 002657" src="https://github.com/user-attachments/assets/542fdb0c-8cd3-46aa-8504-5859b5bc2b33" />
-)
+![Staff availability]<img width="848" height="613" alt="Screenshot 2026-04-26 004419" src="https://github.com/user-attachments/assets/491546bb-0390-469e-abcc-75e229589598" />
+
 
 ## Technology Stack
 
